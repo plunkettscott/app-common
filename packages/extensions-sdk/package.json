@@ -1,0 +1,29 @@
+{
+  "name": "@responseams/extensions-sdk",
+  "version": "0.0.0",
+  "description": "The Lavra Response frontend extensions SDK.",
+  "author": "Scott Plunkett <plunkets@aeoss.io>",
+  "homepage": "https://www.responseams.com",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@nuxt/core": "2.11.0",
+    "@nuxt/types": "0.5.9",
+    "@types/luxon": "1.21.0",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "collect.js": "4.19.0",
+    "hashids": "2.1.0",
+    "he": "1.2.0",
+    "luxon": "1.21.3",
+    "vue": "2.6.11",
+    "vue-property-decorator": "8.3.0"
+  }
+}

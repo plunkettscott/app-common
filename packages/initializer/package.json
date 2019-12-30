@@ -1,0 +1,23 @@
+{
+  "name": "@responseams/app-initializer",
+  "version": "0.0.0",
+  "description": "A module that initializes all default config and other modules for Response.",
+  "author": "Scott Plunkett <plunkets@aeoss.io>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^0.5.9"
+  }
+}
