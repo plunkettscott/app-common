@@ -45,7 +45,8 @@
     "prerelease": "yarn build",
     "release": "lerna publish",
     "build:declarations": "lerna exec --parallel 'tsc --project ./tsconfig.build.json'",
-    "postbuild": "yarn build:declarations"
+    "postbuild": "yarn build:declarations",
+    "bootstrap": "lerna bootstrap"
   },
   "workspaces": [
     "packages/*"

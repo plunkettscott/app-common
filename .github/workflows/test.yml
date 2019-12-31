@@ -14,20 +14,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Install Node
+      - name: Setup Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install
-      - run: yarn test
-      - name: Test and publish code coverage
+      - name: Install Packages
+        run: yarn install
+      - name: Bootstrap Lerna
+        run: yarn run bootstrap
+      - name: Test w/ Reporting
         if: matrix.report-coverage
         uses: paambaati/codeclimate-action@v2.3.0
         env:
           CC_TEST_REPORTER_ID: 0b711def417a17c0ea9a1d7654d17ededa1d7f83d03ac297bf900711636a581c
         with:
           coverageCommand: yarn test --coverage
-          debug: true
-      - name: Test
+      - name: Test w/o Reporting
         if: '!matrix.report-coverage'
         run: yarn test
