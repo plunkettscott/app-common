@@ -99,7 +99,7 @@ export default class JSXCollection {
   ): JSXCollection {
     if (!this.has(key)) {
       throw new Error(
-        'The `key` provided does not exist. Did you mean to `add`?',
+        'The JSXItem key provided was not found. Did you mean to `add`?',
       );
     }
 
