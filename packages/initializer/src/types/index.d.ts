@@ -1,3 +1,0 @@
-interface InitializerOptions {
-  telemetry: boolean;
-}
