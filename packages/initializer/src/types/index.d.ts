@@ -1,3 +1,3 @@
-export interface InitializerOptions {
+interface InitializerOptions {
   telemetry: boolean;
 }
