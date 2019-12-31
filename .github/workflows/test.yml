@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn Install
+      - run: yarn install
       - run: yarn test
       - name: Test and publish code coverage
         if: matrix.report-coverage
