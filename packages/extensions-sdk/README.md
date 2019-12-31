@@ -1,11 +1,13 @@
-# `extensions-sdk`
+# `@responseams/app-extensions-sdk`
 
-> TODO: description
+Provides a number of helpers used by various Response extensions when interacting with the App and
+presenting data to the users.
 
 ## Usage
 
 ```
-const extensionsSdk = require('extensions-sdk');
+import { text } from '@responseams/app-extensions-sdk'
 
-// TODO: DEMONSTRATE API
+text.capitalize('scott')
+// Scott
 ```
