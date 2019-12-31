@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "0.5.9",
-    "@nuxtjs/vuetify": "^1.9.1"
+    "@nuxtjs/vuetify": "1.9.1"
   },
   "dependencies": {
     "consola": "^2.11.2"
