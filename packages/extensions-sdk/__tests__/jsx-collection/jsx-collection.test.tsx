@@ -6,6 +6,9 @@ import JSXCollection from '../../src/JSXCollection/JSXCollection';
 import { JSXItemRenderFn } from '../../src/types';
 import { testComponent } from './jsx-item.test';
 
+const ITEM_NOT_FOUND_ADD_ERROR_MESSAGE =
+  'The JSXItem key provided was not found. Did you mean to `add`?';
+
 const renderFn: JSXItemRenderFn = () => <div>item</div>;
 let collection: JSXCollection;
 
@@ -26,19 +29,11 @@ describe('JSXCollection', () => {
     expect(collection.all().length).toBe(1);
   });
 
-  it('returns instance of JSXItem when using `find`', () => {
-    collection.add('item', renderFn);
-
-    expect(collection.find('item')).toBeInstanceOf(JSXItem);
-  });
-
   it('throws an error when trying to find an item that does not exist', () => {
     try {
       collection.find('item');
     } catch (e) {
-      expect(e.message).toBe(
-        'The JSXItem key provided was not found. Did you mean to `add`?',
-      );
+      expect(e.message).toBe(ITEM_NOT_FOUND_ADD_ERROR_MESSAGE);
     }
   });
 
@@ -74,9 +69,7 @@ describe('JSXCollection', () => {
     try {
       collection.get('item');
     } catch (e) {
-      expect(e.message).toBe(
-        'The JSXItem key provided was not found. Did you mean to `add`?',
-      );
+      expect(e.message).toBe(ITEM_NOT_FOUND_ADD_ERROR_MESSAGE);
     }
   });
 
@@ -137,9 +130,7 @@ describe('JSXCollection', () => {
     try {
       collection.replace('item', renderFn);
     } catch (e) {
-      expect(e.message).toBe(
-        'The `key` provided does not exist. Did you mean to `add`?',
-      );
+      expect(e.message).toBe(ITEM_NOT_FOUND_ADD_ERROR_MESSAGE);
     }
   });
 
