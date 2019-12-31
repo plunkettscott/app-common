@@ -1,5 +1,4 @@
-import { DateTime } from "luxon";
-import { DAY } from "./constants";
+import { DateTime } from 'luxon';
 
 /**
  * Formats the provided Date to a human-friendly relative time
@@ -15,18 +14,18 @@ export default function forHuman(time?: Date): string | null {
   }
 
   let ins = DateTime.fromJSDate(time);
-  let now = DateTime.local();
+  const now = DateTime.local();
 
   if (ins > now) {
     ins = now;
   }
 
-  const diff = ins.diff(now, "days");
+  const diff = ins.diff(now, 'days');
   let ago: string | null = null;
 
   if (diff.days > -30) {
     if (ins.year === now.year) {
-      ago = ins.toFormat("d MMM");
+      ago = ins.toFormat('d MMM');
     } else {
       // prettier-ignore
       ago = ins.toFormat("MMM y");

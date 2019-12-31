@@ -19,6 +19,7 @@ const Config: Configuration = {
   build: {
     babel: {
       sourceType: 'unambiguous',
+      /* istanbul ignore next */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       presets({ isServer }): Array<any> {
         const targets = isServer ? { node: 'current' } : { ie: 11 };

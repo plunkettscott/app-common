@@ -1,6 +1,8 @@
 # Response App Libraries
 
-![Discord](https://img.shields.io/discord/270672972694552576?label=discord) ![GitHub](https://img.shields.io/github/license/lavrahq/response) [![codecov](https://codecov.io/gh/responseams/app-common/branch/master/graph/badge.svg)](https://codecov.io/gh/responseams/app-common)
+![Discord](https://img.shields.io/discord/270672972694552576?label=discord) ![GitHub](https://img.shields.io/github/license/lavrahq/response)
+[![Maintainability](https://api.codeclimate.com/v1/badges/807e0ce5ea1cb4ec3ad5/maintainability)](https://codeclimate.com/github/responseams/app-common/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/807e0ce5ea1cb4ec3ad5/test_coverage)](https://codeclimate.com/github/responseams/app-common/test_coverage)
 
 ## What is this repo?
 
