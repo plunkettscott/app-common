@@ -1,11 +1,13 @@
-# `config-builder`
+# `@responseams/app-config-builder`
 
-> TODO: description
+Allows programatically building a Response App config for the Nuxt.js application using
+a declarative chaining API with TypeScript or JavaScript.
 
 ## Usage
 
 ```
-const configBuilder = require('config-builder');
+const ConfigBuilder = require('@responseams/app-config-builder');
 
-// TODO: DEMONSTRATE API
+return new configBuilder()
+  .withApiURL('http://api.mydomain.com')
 ```
