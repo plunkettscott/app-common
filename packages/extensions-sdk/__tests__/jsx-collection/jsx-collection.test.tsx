@@ -117,6 +117,36 @@ describe('JSXCollection', () => {
     });
   });
 
+  it('replaces the priority of a JSXItem using `replace`', () => {
+    const collection = new JSXCollection();
+
+    collection.add('item', renderFn, 100);
+
+    const item = collection.get('item');
+    expect(item.getPriority()).toBe(100);
+
+    collection.replace('item', undefined, 300);
+
+    expect(item.getPriority()).toBe(300);
+    expect(item.render(testComponent.vm.$createElement)).toMatchObject({
+      type: 'div',
+    });
+  });
+
+  it('replaces the content and priority of a JSXItem using `replace`', () => {
+    const collection = new JSXCollection();
+
+    collection.add('item', renderFn, 100);
+    const item = collection.get('item');
+
+    collection.replace('item', () => <p>replaced</p>, 300);
+
+    expect(item.getPriority()).toBe(300);
+    expect(item.render(testComponent.vm.$createElement)).toMatchObject({
+      type: 'p',
+    });
+  });
+
   it('throws an error when using `replace` for a key that does not exist', () => {
     const collection = new JSXCollection();
 
