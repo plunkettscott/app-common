@@ -10,7 +10,7 @@ jobs:
         include:
           - node-version: '13.x'
             report-coverage: true
-    name: Node ${{ matrix.node-version }}
+    name: Test with Node ${{ matrix.node-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@master
