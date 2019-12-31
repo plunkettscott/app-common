@@ -1,4 +1,11 @@
 import { Configuration } from '@nuxt/types';
+import { Options } from '@nuxtjs/vuetify/dist';
+import defaults from './defaults';
+import merge from 'lodash.merge';
+
+export interface ProxyPathRewrite {
+  [match: string]: string;
+}
 
 export default class ConfigBuilder {
   /** The Nuxt Config object. */
@@ -6,28 +13,7 @@ export default class ConfigBuilder {
 
   /** Constructor */
   public constructor() {
-    this.config = {
-      modules: ['@nuxtjs/axios'],
-      plugins: [],
-      buildModules: ['@nuxtjs/typescript'],
-      head: {
-        title: 'Lavra Response',
-        titleTemplate: '%s - Lavra Response',
-      },
-      axios: {},
-      proxy: {},
-      build: {
-        babel: {
-          sourceType: 'unambiguous',
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          presets({ isServer }): Array<any> {
-            const targets = isServer ? { node: 'current' } : { ie: 11 };
-            return [[require.resolve('@nuxt/babel-preset-app'), { targets }]];
-          },
-        },
-        transpile: [],
-      },
-    };
+    this.config = defaults;
   }
 
   /**
@@ -36,19 +22,29 @@ export default class ConfigBuilder {
    *
    * @param apiUrl The API URL
    */
-  public withApiURL(baseURL: string, debug = false): ConfigBuilder {
+  public withApiURL(
+    baseURL: string,
+    stripPath: boolean | ProxyPathRewrite = false,
+    debug = false,
+  ): ConfigBuilder {
     this.config.axios = {
       baseURL,
-      proxy: true,
       debug,
-      retry: {
-        retries: 3,
-      },
     };
 
     this.config.proxy = {
-      '/api/': baseURL,
+      '/api/': {
+        target: baseURL,
+      },
     };
+
+    if (typeof stripPath === 'boolean' && stripPath === true) {
+      this.config.proxy['/api/'].pathRewrite = { '^/api/': '' };
+    }
+
+    if (typeof stripPath === 'object') {
+      this.config.proxy['/api/'].pathRewrite = stripPath;
+    }
 
     return this;
   }
@@ -61,14 +57,19 @@ export default class ConfigBuilder {
    * @param proxyFrom The route to proxy from.
    * @param proxyTo The full URL that should receive the proxies request.
    */
-  public withProxy(proxyFrom: string, proxyTo: string): ConfigBuilder {
+  public withProxy(
+    proxyFrom: string,
+    proxyTo: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    pathRewrite?: any,
+  ): ConfigBuilder {
     if (proxyFrom.indexOf('api') > -1) {
       throw new Error(
         'You cannot provide a proxy on the /api/ path. Use another path.',
       );
     }
 
-    this.config.proxy[proxyFrom] = proxyTo;
+    this.config.proxy[proxyFrom] = { target: proxyTo, pathRewrite };
 
     return this;
   }
@@ -92,6 +93,18 @@ export default class ConfigBuilder {
     }
 
     this.config.head.titleTemplate = template;
+
+    return this;
+  }
+
+  /**
+   * Merges the provided theme configuration for Vuetify with our defaults,
+   * allowing you to override anything, including the default colors.
+   *
+   * @param themeConfig The Options to provide the underlying Vuetify instance.
+   */
+  public withCustomizedTheme(themeConfig: Options): ConfigBuilder {
+    this.config.vuetify = merge(this.config.vuetify, themeConfig);
 
     return this;
   }

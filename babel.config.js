@@ -24,6 +24,7 @@ module.exports = (api) => {
     //   '@babel/plugin-proposal-class-properties',
     //   '@babel/plugin-transform-typescript',
     // ],
+    plugins: ['@babel/plugin-proposal-optional-chaining'],
     env: {
       build: {
         ignore: [

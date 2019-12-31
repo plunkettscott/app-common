@@ -3,7 +3,8 @@
   "compilerOptions": {
     "declarationDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "types": ["@nuxt/vue-app", "@nuxtjs/auth"]
   },
   "include": ["./src"]
 }
