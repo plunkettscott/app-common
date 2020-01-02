@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@nuxt/babel-preset-app": "2.11.0",
-    "@nuxt/types": "0.5.9",
+    "@nuxt/types": "0.6.0",
     "@nuxtjs/vuetify": "1.9.1",
     "@types/lodash.merge": "4.6.6",
     "lodash": "4.17.15",
