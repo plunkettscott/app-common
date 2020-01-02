@@ -36,6 +36,7 @@ jobs:
         if: '!matrix.report-coverage'
         run: yarn test
   release:
+    needs: test
     name: Release
     runs-on: ubuntu-latest
     steps:

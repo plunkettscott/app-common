@@ -12,7 +12,9 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "files": ["dist"],
+  "files": [
+    "dist/**"
+  ],
   "devDependencies": {
     "@nuxt/core": "2.11.0",
     "@nuxt/types": "0.6.0",
