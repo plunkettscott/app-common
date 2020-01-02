@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.0
+
+### Minor Changes
+
+- 7c74ca3: Changes to publishing
+
 ## 0.3.0
 
 ### Minor Changes
