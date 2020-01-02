@@ -34,5 +34,6 @@
     "@nuxtjs/auth": "4.8.5",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/vuetify": "1.9.1"
-  }
+  },
+  "gitHead": "fb9c30dbc2c91c0548c8170d3c226b74e83ba800"
 }
