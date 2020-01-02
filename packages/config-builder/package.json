@@ -1,6 +1,6 @@
 {
   "name": "@responseams/app-config-builder",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Builds a proper configuration object to be used when staring Nuxt.",
   "author": "Scott Plunkett <plunkets@aeoss.io>",
   "homepage": "https://www.responseams.com",
@@ -12,9 +12,7 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
