@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "private": true,
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
