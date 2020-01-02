@@ -36,6 +36,7 @@ jobs:
         if: '!matrix.report-coverage'
         run: yarn test
   release:
+    needs: test
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -72,7 +73,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://npm.pkg.github.com/@responseams
           scope: '@responseams'
       - run: yarn
       - run: yarn publish-ci
