@@ -22,7 +22,7 @@
     "@nuxt/types": "0.6.0",
     "@nuxtjs/vuetify": "1.9.1",
     "@types/lodash.merge": "4.6.6",
-    "dotenv": "^8.2.0",
+    "dotenv": "8.2.0",
     "lodash": "4.17.15",
     "lodash.merge": "4.6.2",
     "vue-loader": "15.8.3",
