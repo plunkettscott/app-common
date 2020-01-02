@@ -16,7 +16,7 @@
   ],
   "devDependencies": {
     "@nuxt/core": "2.11.0",
-    "@nuxt/types": "0.5.9",
+    "@nuxt/types": "0.6.0",
     "@types/luxon": "1.21.0",
     "@vue/test-utils": "1.0.0-beta.30",
     "collect.js": "4.19.0",
