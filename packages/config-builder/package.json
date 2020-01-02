@@ -35,5 +35,9 @@
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/vuetify": "1.9.1"
   },
-  "gitHead": "fb9c30dbc2c91c0548c8170d3c226b74e83ba800"
+  "gitHead": "c41ef5b0a1ee2f7327295d2409e4f371f6ad92cf",
+  "publishConfig": {
+    "access": "public",
+    "npmClient": "yarn"
+  }
 }
