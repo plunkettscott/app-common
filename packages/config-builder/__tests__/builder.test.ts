@@ -2,6 +2,22 @@
 
 import ConfigBuilder from '../src';
 import { IconPreset } from '@nuxtjs/vuetify/dist/icons';
+import { NuxtConfigurationModule } from '@nuxt/types/config/module';
+
+function testExtensionExists(
+  modules: NuxtConfigurationModule[],
+  test: NuxtConfigurationModule,
+): void {
+  const index = modules.findIndex((v, i, obj) => {
+    if (v.length == 2 && obj[i] === test) {
+      return i;
+    }
+
+    return -1;
+  });
+
+  expect(index).toBeGreaterThan(-1);
+}
 
 describe('Config Builder', () => {
   it('properly initializes a ConfigBuilder instance', () => {
@@ -154,5 +170,43 @@ describe('Config Builder', () => {
         },
       },
     });
+  });
+
+  it('adds a single extension', () => {
+    const object = new ConfigBuilder()
+      .withApiURL('http://api')
+      .withExtension('name', {})
+      .getObject();
+
+    if (object.modules === undefined) {
+      expect(false).toBe(true);
+
+      return;
+    }
+
+    testExtensionExists(object.modules, ['name', {}]);
+  });
+
+  it('adds many extensions', () => {
+    const object = new ConfigBuilder()
+      .withApiURL('http://api')
+      .withExtensions([
+        {
+          name: 'name',
+          config: {},
+        },
+        {
+          name: 'other',
+          config: {},
+        },
+      ])
+      .getObject();
+
+    if (object.modules === undefined) {
+      object.modules = [];
+    }
+
+    testExtensionExists(object.modules, ['name', {}]);
+    testExtensionExists(object.modules, ['other', {}]);
   });
 });

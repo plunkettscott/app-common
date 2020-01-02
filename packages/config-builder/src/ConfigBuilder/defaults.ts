@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import { Configuration } from '@nuxt/types';
 import { IconPreset } from '@nuxtjs/vuetify/dist/icons';
 
+require('dotenv').config();
+
 const Config: Configuration = {
-  modules: ['@nuxtjs/axios', '@responseams/app-initializer'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa'],
   plugins: [],
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify', '@nuxtjs/dotenv'],
   head: {
     title: 'Lavra Response',
     titleTemplate: '%s - Lavra Response',
@@ -38,6 +41,32 @@ const Config: Configuration = {
     },
     optionsPath: undefined,
     treeShake: process.env.NODE_ENV === 'production',
+  },
+  auth: {
+    localStorage: false,
+    fullPathRedirect: true,
+    redirect: {
+      login: '/auth/login',
+      logout: '/auth/logout',
+      callback: '/auth/login/finish',
+      home: '/',
+    },
+    strategies: {
+      response: {
+        _scheme: 'oauth2',
+        _name: 'response',
+        authorization_endpoint: `/api/oauth/authorize`,
+        token_endpoint: `/api/oauth/token`,
+        token_key: 'access_token',
+        token_type: 'Bearer',
+        response_type: 'code',
+        grant_type: 'authorization_code',
+        scope: '*',
+      },
+    },
+  },
+  router: {
+    middleware: ['auth'],
   },
 };
 

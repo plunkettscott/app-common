@@ -4,7 +4,7 @@
     "declarationDir": "./dist",
     "rootDir": "./src",
     "baseUrl": "./",
-    "types": ["@nuxt/vue-app", "@nuxtjs/auth"]
+    "types": []
   },
   "include": ["./src"]
 }

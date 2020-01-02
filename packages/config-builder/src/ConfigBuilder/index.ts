@@ -7,6 +7,11 @@ export interface ProxyPathRewrite {
   [match: string]: string;
 }
 
+export interface ExtensionObject {
+  name: string;
+  config?: any;
+}
+
 export default class ConfigBuilder {
   /** The Nuxt Config object. */
   private config: Configuration;
@@ -93,6 +98,36 @@ export default class ConfigBuilder {
     }
 
     this.config.head.titleTemplate = template;
+
+    return this;
+  }
+
+  /**
+   * Adds an extension to the Response app so that it can be registered and all necessary
+   * UI features.
+   *
+   * @param extension The extension package name.
+   * @param config The optional configuration object passed to the extension.
+   */
+  public withExtension(extension: string, config: any = {}): ConfigBuilder {
+    if (!this.config.modules) {
+      this.config.modules = [];
+    }
+
+    this.config.modules.push([extension, config]);
+
+    return this;
+  }
+
+  /**
+   * Adds multiple extensions to the Response app.
+   *
+   * @param extensions An array of ExtensionObjects.
+   */
+  public withExtensions(extensions: ExtensionObject[]): ConfigBuilder {
+    extensions.forEach((extension: ExtensionObject) => {
+      this.withExtension(extension.name, extension.config);
+    });
 
     return this;
   }

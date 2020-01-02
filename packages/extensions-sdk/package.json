@@ -17,13 +17,17 @@
   "devDependencies": {
     "@nuxt/core": "2.11.0",
     "@nuxt/types": "0.6.0",
+    "@nuxt/utils": "^2.11.0",
+    "@types/lodash.isequal": "^4.5.5",
     "@types/luxon": "1.21.0",
     "@vue/test-utils": "1.0.0-beta.30",
     "collect.js": "4.19.0",
     "hashids": "2.1.0",
     "he": "1.2.0",
+    "lodash.isequal": "^4.5.0",
     "luxon": "1.21.3",
     "vue": "2.6.11",
-    "vue-property-decorator": "8.3.0"
+    "vue-property-decorator": "8.3.0",
+    "vue-router": "^3.1.3"
   }
 }
