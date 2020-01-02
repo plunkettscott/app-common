@@ -10,8 +10,6 @@ jobs:
       fail-fast: true
       matrix:
         node-version: ['12.x', '13.x']
-        include:
-          - node-version: '13.x'
     name: Test with Node ${{ matrix.node-version }}
     steps:
       - name: Checkout
