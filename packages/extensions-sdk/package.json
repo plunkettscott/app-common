@@ -17,8 +17,7 @@
   ],
   "dependencies": {
     "lodash.isequal": "4.5.0",
-    "luxon": "1.21.3",
-    "collect.js": "4.19.0"
+    "luxon": "1.21.3"
   },
   "devDependencies": {
     "@nuxt/core": "2.11.0",
