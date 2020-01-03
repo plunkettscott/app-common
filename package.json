@@ -1,6 +1,5 @@
 {
   "name": "root",
-  "private": true,
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
@@ -44,12 +43,11 @@
     "test": "jest",
     "commit": "git-cz",
     "prerelease": "yarn build",
-    "release": "lerna publish",
+    "release": "lerna publish from-package -y --no-verify-access",
     "build:declarations": "lerna exec --parallel 'tsc --project ./tsconfig.build.json'",
     "postbuild": "yarn build:declarations",
     "bootstrap": "lerna bootstrap",
-    "changeset": "changeset",
-    "publish-ci": "lerna publish from-package -y --no-verify-access"
+    "changeset": "changeset"
   },
   "workspaces": [
     "packages/*"
