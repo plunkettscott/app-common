@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- dd3a506: Workflow Changes
+
 ## 0.4.0
 
 ### Minor Changes
