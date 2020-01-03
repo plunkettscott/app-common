@@ -19,13 +19,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "devDependencies": {
-    "@nuxt/babel-preset-app": "2.11.0",
-    "@nuxt/types": "0.6.0",
-    "@nuxtjs/vuetify": "1.9.1",
-    "@types/lodash.merge": "4.6.6",
-    "dotenv": "8.2.0",
-    "lodash": "4.17.15",
-    "lodash.merge": "4.6.2",
     "vue-loader": "15.8.3",
     "vue-router": "3.1.3",
     "vuex": "3.1.2"
@@ -33,7 +26,13 @@
   "dependencies": {
     "@nuxtjs/auth": "4.8.5",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
-    "@nuxtjs/vuetify": "1.9.1"
+    "@nuxt/babel-preset-app": "2.11.0",
+    "@nuxt/types": "0.6.0",
+    "@nuxtjs/vuetify": "1.9.1",
+    "@types/lodash.merge": "4.6.6",
+    "dotenv": "8.2.0",
+    "lodash": "4.17.15",
+    "lodash.merge": "4.6.2"
   },
   "gitHead": "c41ef5b0a1ee2f7327295d2409e4f371f6ad92cf",
   "publishConfig": {
