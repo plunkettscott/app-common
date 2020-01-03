@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.0
+
+### Minor Changes
+
+- d33f37f: Removed Collection and collect.js dependency
+
 ## 0.5.2
 
 ### Patch Changes
