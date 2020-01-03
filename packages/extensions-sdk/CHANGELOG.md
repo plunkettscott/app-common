@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.7.0
+
+### Minor Changes
+
+- 8331936: Moves the route helpers to the top-level module
+
 ## 0.6.0
 
 ### Minor Changes

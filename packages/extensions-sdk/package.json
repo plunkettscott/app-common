@@ -1,6 +1,6 @@
 {
   "name": "@responseams/extensions-sdk",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "The Lavra Response frontend extensions SDK.",
   "author": "Scott Plunkett <plunkets@aeoss.io>",
   "homepage": "https://www.responseams.com",
