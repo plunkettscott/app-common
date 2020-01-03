@@ -1,7 +1,7 @@
 import { NuxtRouteConfig } from '@nuxt/types/config/router';
 import isEqual from 'lodash.isequal';
 
-export default function isMissing(
+export default function isRouteMissing(
   routes: NuxtRouteConfig[],
   routeTest: NuxtRouteConfig,
 ): boolean {
