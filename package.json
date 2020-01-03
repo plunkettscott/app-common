@@ -44,7 +44,7 @@
     "test": "jest",
     "commit": "git-cz",
     "prerelease": "yarn build",
-    "release": "lerna publish from-package -y --no-verify-access",
+    "release": "lerna publish from-package -y --no-verify-access --no-git-reset",
     "build:declarations": "lerna exec --parallel 'tsc --project ./tsconfig.build.json'",
     "postbuild": "yarn build:declarations",
     "bootstrap": "lerna bootstrap",
