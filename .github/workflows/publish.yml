@@ -53,6 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-npm:
+    name: Publish to NPM
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -62,10 +63,11 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn
-      - run: yarn publish-ci
+      - run: yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   publish-gpr:
+    name: Publish to GitHub Packages
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -74,8 +76,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/@responseams
-          scope: '@responseams'
       - run: yarn
-      - run: yarn publish-ci
+      - run: yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
