@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.2
+
+### Patch Changes
+
+- 6d9702c: Change collect.js to be a dependency instead of devDependency
+
 ## 0.5.1
 
 ### Patch Changes
